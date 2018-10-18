@@ -1,0 +1,49 @@
+﻿@using System.Web.Optimization
+@{
+	ViewBag.Title = "Index";
+}
+@Scripts.Render("~/Bundles/data_table")
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box box-default">
+			<div class="box-header">
+				<h3 class="box-title">Incidents</h3>
+			</div>
+			<div class="box-body">
+				<div class="form-group">
+					<div>
+						<table id="incidentTable"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function () {
+			$("#incidentTable").DataTable({
+
+
+
+				"ajax": {
+
+					"url": "@Url.Action("GetIncidents", "Incidents")",
+					"type": "POST",
+					"dataSrc":"",
+
+				},
+				"columns": [
+					{ data: "Title", title: "Title" },
+					{data: "IncidentPriorityStr", title:"Priority"},
+					{ data: "Description", title: "Description" },
+					{ data: "OrderDateStr", title: "Order Date" },
+					{ data: "Owner", title: "Owner" },
+					{ data: "NotificationMethod", title: "Notification Method"},
+					{ data: "ServiceDescAgent", title: "Service Desk Agent" },
+					
+				]
+			});
+		});
+</script>

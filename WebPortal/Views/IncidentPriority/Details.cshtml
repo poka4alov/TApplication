@@ -1,0 +1,66 @@
+﻿@model WebPortal.Models.Settings.IncidentPriorityDetailModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IncidentPriorityDetailModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrgencyTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrgencyTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImpactTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImpactTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResolutionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResolutionTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponceTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponceTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

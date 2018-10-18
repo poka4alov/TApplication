@@ -1,0 +1,31 @@
+﻿@model MvcSiteMapProvider.Web.Html.Models.MenuHelperModel
+@using System.Web.Mvc.Html
+@using MvcSiteMapProvider.Web.Html.Models
+
+<ul id="menu" class="sidebar-menu" data-widget="tree">
+	@foreach (var node in Model.Nodes)
+	{
+		if (node.Children.Any())
+		{
+			<li class="treeview @(node.IsInCurrentPath && !node.IsRootNode ? "active" : "")">
+				@Html.DisplayFor(m => node)
+				<ul class="treeview-menu">
+					@foreach (var nod in node.Children)
+					{
+						<li>
+							@Html.DisplayFor(m => node)
+						</li>
+					}
+
+				</ul>
+			</li>
+		}
+		else 
+		{
+			<li>
+				@Html.DisplayFor(m => node)
+			
+			</li>
+		}
+	}
+	</ul>

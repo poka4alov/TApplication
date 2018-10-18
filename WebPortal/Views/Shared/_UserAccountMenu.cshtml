@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNet.Identity
+@* BEGIN User Account Menu *@
+
+<li class="dropdown user user-menu">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		<img src="" class="user-image" alt="">
+		<span class="hidden-xs"></span>
+	</a>
+	<ul class="dropdown-menu">
+		<li class="user-header">
+			<img src="" class="img-circle" alt="">
+			<p>
+				User id = @User.Identity.GetUserId()
+			</p>
+			<p>
+				@User.Identity.Name
+			</p>
+		</li>
+		<li class="user-footer">
+			<div class="pull-left">
+				<a href="#" class="btn btn-default btn-flat">Profile</a>
+			</div>
+			<div class="pull-right">
+				<a href="#" class="btn btn-default btn-flat">@Html.ActionLink("LogOut", "Logout", "Account")</a>
+			</div>
+		</li>
+	</ul>
+</li>
+
+
+
+@* END User Account Menu *@
